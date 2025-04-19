@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from math import ceil
 from itertools import permutations
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 dist = {
     'C1-C2': 4, 'C2-C1': 4,
@@ -89,5 +89,5 @@ def api():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     app.run(debug=True)
